@@ -32,13 +32,13 @@ scrapinghub/splash `
 --disable-lua-sandbox
 ```
 
-#### 运行爬虫
+#### 运行爬虫并处理数据
 
 执行命令
 ```sh
-scrapy crawl <spider_name>
+python main.py
 ```
-以启动爬虫，其中 `<spider_name>` 为 `bupt` 或 `xidian`。
+以启动爬虫，爬取完成后将自动进行数据处理。
 
 ## 目录结构
 
@@ -46,7 +46,9 @@ scrapy crawl <spider_name>
 .
 ├── data                          # 数据
 │   ├── bupt.csv                  # BuptSpider 爬取的数据
-│   └── xidian.csv                # XidianSpider 爬取的数据
+│   ├── xidian.csv                # XidianSpider 爬取的数据
+│   └── 就业信息汇总.xlsx          # 处理和整合的结果
+├── main.py                       # 主程序
 ├── requirements.txt              # 依赖文件，内含所需的 Python 包及其版本
 ├── scrapy.cfg                    # Scrapy 框架的配置文件
 └── scrapy_project                # Scrapy 爬虫项目文件夹
